@@ -63,3 +63,32 @@ body {
     background-color: #333333;
     cursor: pointer;
 }
+
+@media (max-width: 600px) {
+    .content {
+        margin-top: 50px; /* Less empty space at the top */
+    }
+
+    .content h1 {
+        font-size: 3em; /* Much smaller for phones */
+        line-height: 1.1; /* Keeps wrapped text looking tight */
+        margin-bottom: 15px;
+    }
+
+    .content p {
+        font-size: 1rem;
+    }
+
+    /* Stack the buttons on mobile so they don't get squished */
+    .btn-content {
+        flex-direction: column; 
+        gap: 15px;
+        width: 100%;
+    }
+
+    .btn-content a, 
+    .btn-content button {
+        width: 100%; /* Makes buttons span the width of the container on mobile */
+        max-width: 250px; /* Keeps them from getting ridiculously wide */
+    }
+}
