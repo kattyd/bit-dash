@@ -3,7 +3,7 @@ import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import { useBitcoinStore } from "../store/store";
 import './StatGrid.css';
-import bitcoin from "../assets/money.png";
+import money from "../assets/money.png";
 import exchange from "../assets/swap.png";
 import graph from "../assets/api.png";
 import pickaxe from "../assets/mint.png";
@@ -14,28 +14,28 @@ function StatGrid() {
 
     const statData = [
         {
-            id: "price",
+            id: 1,
             title: "Bitcoin Price",
             value: btcPrice ? `$${btcPrice.toLocaleString()}` : "Loading...",
-            icon: bitcoin,
+            icon: money,
             subText: "BTC rate has increased"
         },
         {
-            id: "fees",
+            id: 2,
             title: "Fees",
             value: fees ? `${fees.halfHourFee} sat/vB` : "Loading...",
             icon: exchange,
             subText: "BTC rate has increased"
         },
         {
-            id: "mcap",
+            id: 3,
             title: "Market Cap",
             value: marketCap ? marketCap.toLocaleString(undefined, { maximumFractionDigits: 0 }) : "Loading...",
             icon: graph,
             subText: "BTC rate has increased"
         },
         {
-            id: "blocks",
+            id: 4,
             title: "Last Finalized Block",
             value: lastBlock ? lastBlock.toLocaleString() : "Loading...",
             icon: pickaxe,
@@ -72,8 +72,8 @@ function StatGrid() {
     }
     return (
         <div className="card-grid">
-            {statData.map(stat => (
-            <div className="card">
+            {statData.map((stat, index) => (
+            <div className="card" key={stat.id || index}>
                 <section className="card-header">
                     <img src={stat.icon} alt="Bitcoin" className="bitcoin-icon" />
                     <h4>{stat.title}</h4>
