@@ -1,0 +1,100 @@
+.blocks-container {
+    font-family: 'DM Sans', sans-serif;
+    display: flex;
+    justify-self: center;
+    flex-direction: column;
+    width: 1180px;
+    background: rgba(255, 255, 255, 0.45); 
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.7); 
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);  
+    border-radius: 16px;
+    padding: 24px;
+    color: #1a202c;
+}
+
+.blocks-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.blocks-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.customize-btn {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #8b949e;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.2s;
+}
+
+.customize-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+/* --- TABLE STYLES --- */
+.blocks-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 14px;
+}
+
+.blocks-table th {
+    color: #8b949e;
+    font-weight: 500;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.blocks-table td {
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+    color: #a1aab5;
+}
+.blocks-table tr:last-child td {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+.block-height {
+    color: #b94256 !important;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.cube-icon {
+    color: #8b949e;
+}
+
+.time-col {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.clock-icon {
+    color: #8b949e;
+}
+
+/* Make it responsive */
+@media (max-width: 768px) {
+    .blocks-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap; /* Prevents columns from squishing on mobile */
+    }
+    
+    .blocks-table th, .blocks-table td {
+        padding-right: 24px; /* Adds spacing between columns when scrolling horizontally */
+    }
+}

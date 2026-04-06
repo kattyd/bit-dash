@@ -1,0 +1,25 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Hero.css"
+import Navbar from "./Navbar";
+
+const Hero = () => {
+    return (
+        <>        
+            <Navbar />
+            <div className="hero">
+                <div className="content">
+                    <h1>Explore the power of Blockchain technology</h1>
+                    <p>Welcome to our blockchain explorer - your gateway to the world of blockchain technology. Explore transactions, blocks and addresses effortlessly.</p>
+                    <div className="btn-content">
+                        <button className="learn">Learn More</button>
+                        <button>Go to Explorer</button>
+                    </div>
+                </div>
+            </div>
+        </>
+
+    )
+}
+
+export default Hero;

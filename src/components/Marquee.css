@@ -1,0 +1,37 @@
+/* marquee.css */
+.marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff73;
+  backdrop-filter: blur(16px); 
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+  color: #b94256; 
+  padding: 1px 0;
+  margin: 1rem 0;
+  position: relative;
+  z-index: 5;
+}
+
+.marquee-content {
+  display: flex;
+  width: max-content; /* Critical: allows the flex container to grow as wide as both text blocks */
+}
+
+.marquee-text {
+  padding-right: 10px; /* Just a tiny bit of breathing room */
+  font-size: 1rem;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  animation: scrollText 15s linear infinite; /* Adjust 15s to make it faster/slower */
+}
+
+@keyframes scrollText {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); } /* Moves exactly its own width to the left */
+}
+
+.marquee-wrapper:hover .marquee-text {
+  animation-play-state: paused;
+}
