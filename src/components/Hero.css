@@ -40,11 +40,15 @@ body {
     height: 50px;
     width: 150px;
     border-radius: 50px;
-    border: 1px solid ;
-    background-color: transparent;
+    border: none;
+    background-color: #fff;
     color: #000;
     font-weight: 700;
     
+}
+.btn-content button:hover {
+    background-color: #e0e0e0;
+    cursor: pointer;
 }
 .btn-content a {
     color: inherit;
@@ -54,4 +58,8 @@ body {
     background-color: #000000;
     color: #fff;
     border: none;
+}
+.btn-content .learn:hover {
+    background-color: #333333;
+    cursor: pointer;
 }

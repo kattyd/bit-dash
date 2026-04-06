@@ -1,4 +1,6 @@
 import React from 'react';
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 import { useBitcoinStore } from '../store/store';
 import { formatTimeAgo } from './timeHelper'; 
 import './TableCard.css';
@@ -7,7 +9,39 @@ function TableCard() {
     const { latestBlocks, isLoading } = useBitcoinStore();
 
     if (isLoading || latestBlocks.length === 0) {
-        return <div className="blocks-container loading">Loading latest blocks...</div>;
+        return (
+            <SkeletonTheme baseColor="rgba(255, 255, 255, 0.3)" highlightColor="rgba(255, 255, 255, 0.7)">
+                <div className="blocks-container">
+                    <div className="blocks-header">
+                        {/* Placeholder for "Latest Blocks" title */}
+                        <Skeleton width={150} height={24} />
+                    </div>
+                    <table className="blocks-table">
+                        <thead>
+                            <tr>
+                                <th><Skeleton width={60} /></th>
+                                <th><Skeleton width={100} /></th>
+                                <th><Skeleton width={80} /></th>
+                                <th><Skeleton width={60} /></th>
+                                <th><Skeleton width={80} /></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {/* Map 5 empty rows to simulate table data loading */}
+                            {[1, 2, 3, 4, 5].map((row) => (
+                                <tr key={row}>
+                                    <td><Skeleton width={90} height={18} /></td>
+                                    <td><Skeleton width={120} height={18} /></td>
+                                    <td><Skeleton width={70} height={18} /></td>
+                                    <td><Skeleton width={80} height={18} /></td>
+                                    <td><Skeleton width={60} height={18} /></td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            </SkeletonTheme>
+        );
     }
 
     return (

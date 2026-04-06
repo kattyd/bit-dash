@@ -35,6 +35,9 @@
   color: #fff;
   text-decoration: none;
 }
+.back-btn button:hover {
+  background-color: #a12e3b;
+}
 
 @media (max-width: 1024px) {
     .top-grid {

@@ -1,10 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 import { useBitcoinStore } from "../store/store";
 import './StatGrid.css';
-import bitcoin from "../assets/bitcoin.png";
-import exchange from "../assets/exchange.png";
-import graph from "../assets/graph.png";
-import pickaxe from "../assets/pickaxe.png";
+import bitcoin from "../assets/money.png";
+import exchange from "../assets/swap.png";
+import graph from "../assets/api.png";
+import pickaxe from "../assets/mint.png";
 import { title } from "framer-motion/client";
 
 function StatGrid() {
@@ -43,7 +45,30 @@ function StatGrid() {
     ];
 
     if (isLoading) {
-        return <div className="stat-grid loading"><p>Loading...</p></div>;
+        return (
+            <SkeletonTheme baseColor="rgba(255, 255, 255, 0.3)" highlightColor="rgba(255, 255, 255, 0.7)">
+                <div className="card-grid">
+                    {/* We map an array of 4 empty items to generate 4 skeleton cards */}
+                    {[1, 2, 3, 4].map((item) => (
+                        <div className="card card-1" key={item}>
+                            <div className="card-header">
+                                {/* The Icon Placeholder */}
+                                <Skeleton circle width={40} height={40} />
+                                {/* The Title Placeholder */}
+                                <Skeleton width={120} height={20} style={{ marginTop: '1rem', marginLeft: '10px' }} />
+                            </div>
+                            <div className="card-content">
+                                {/* The Big Number Placeholder */}
+                                <Skeleton width="70%" height={32} style={{ marginTop: '10px', marginLeft: '10px' }} />
+                                <hr />
+                                {/* The Subtitle Placeholder */}
+                                <Skeleton width="40%" height={16} style={{ marginLeft: '10px' }} />
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </SkeletonTheme>
+        )
     }
     return (
         <div className="card-grid">

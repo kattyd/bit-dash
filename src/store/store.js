@@ -12,12 +12,13 @@ export const useBitcoinStore = create((set) => ({
     fetchDashboardData: async () => {
         set({ isLoading: true });
         try {
-            const [priceRes, feesRes, blockRes, chartRes, blocksRes] = await Promise.all([
+            const [priceRes, feesRes, blockRes, chartRes, blocksRes, _delay] = await Promise.all([
                 fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_market_cap=true'),
                 fetch('https://mempool.space/api/v1/fees/recommended'),
                 fetch('https://mempool.space/api/blocks/tip/height'),
                 fetch('https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=14&interval=daily'),
-                fetch('https://mempool.space/api/v1/blocks')
+                fetch('https://mempool.space/api/v1/blocks'),
+                new Promise (resolve => setTimeout(resolve, 1600))
             ]);
 
             const priceData = await priceRes.json();
