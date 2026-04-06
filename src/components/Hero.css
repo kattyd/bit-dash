@@ -8,6 +8,7 @@ body {
     justify-content: center; 
     align-items: center; 
     border-radius: 10px;
+    min-height: 100dvh;
 }
 
 .content {
