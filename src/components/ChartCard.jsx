@@ -17,7 +17,7 @@ function ChartCard() {
             </header>
             
             {/* ResponsiveContainer makes the chart fit your CSS grid automatically */}
-            <div className="chart-wrapper" style={{ width: '100%', height: 300 }}>
+            <div className="chart-wrapper">
                 <ResponsiveContainer>
                     <AreaChart data={chartData} margin={{ top: 10, right: 0, left: 0, bottom: 0 }}>
                         {/* THIS IS THE MAGIC GRADIENT */}

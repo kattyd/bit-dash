@@ -7,4 +7,27 @@
     border-radius: 16px;
     padding: 24px;
     color: #1a202c;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.chart-wrapper {
+    width: 100%;
+    height: 300px;
+    margin-top: 16px;
+}
+
+@media (max-width: 768px) {
+    .chart-card {
+        padding: 16px;
+    }
+    
+    .chart-wrapper {
+        height: 220px; 
+    }
+    
+    .chart-header h3 {
+        font-size: 1.1rem; 
+        margin: 0;
+    }
 }

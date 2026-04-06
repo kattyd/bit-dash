@@ -15,7 +15,6 @@ function TableCard() {
             <div className="blocks-header">
                 <h3>Latest Blocks</h3>
             </div>
-            
             <table className="blocks-table">
                 <thead>
                     <tr>

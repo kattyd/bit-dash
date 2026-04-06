@@ -1,6 +1,9 @@
 .dashboard {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
+  flex-direction: column;
+  /* align-items: center; */
+  padding: 40px;
 }
 .top-grid {
   display: grid;
@@ -15,4 +18,30 @@
   display: grid;
   grid-template-columns: 1fr 1fr; /* 2 equal columns */
   gap: 15px;
+}
+.back-btn {
+  margin-top: 1.5rem;
+}
+.back-btn button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  background-color: #b94256;
+  font-weight: 600;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.back-btn button a {
+  color: #fff;
+  text-decoration: none;
+}
+
+@media (max-width: 1024px) {
+    .top-grid {
+        grid-template-columns: 1fr; /* Stacks the StatGrid on top of the ChartCard */
+    }
+    
+    .dashboard {
+        padding: 20px;
+    }
 }

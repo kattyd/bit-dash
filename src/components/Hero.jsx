@@ -13,7 +13,9 @@ const Hero = () => {
                     <p>Welcome to our blockchain explorer - your gateway to the world of blockchain technology. Explore transactions, blocks and addresses effortlessly.</p>
                     <div className="btn-content">
                         <button className="learn">Learn More</button>
-                        <button>Go to Explorer</button>
+                        <button> 
+                            <Link to="/dashboard">Go to Dashboard</Link>
+                        </button>
                     </div>
                 </div>
             </div>

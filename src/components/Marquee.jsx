@@ -2,7 +2,7 @@ import React from 'react';
 import './Marquee.css';
 
 const Marquee = () => {
-  const text = "✦ BUILDING FOR THE WEB ✦ TELLING DIGITAL STORIES ✦ WRITING CODE ✦ CRAFTING EXPERIENCES ";
+  const text = "₿ THE GO TO BLOCKCHAIN EXPLORER ₿ THE GO TO BLOCKCHAIN EXPLORER ₿ THE GO TO BLOCKCHAIN EXPLORER ₿ THE GO TO BLOCKCHAIN EXPLORER ₿ THE GO TO BLOCKCHAIN EXPLORER ₿ THE GO TO BLOCKCHAIN EXPLORER";
   
   return (
     <div className="marquee-wrapper">

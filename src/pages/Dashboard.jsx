@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useBitcoinStore } from "../store/store";
+import { Link } from "react-router-dom";
 import './Dashboard.css';
 import StatGrid from "../components/StatGrid";
 import ChartCard from "../components/ChartCard";
@@ -24,13 +25,16 @@ function Dashboard() {
         <Marquee />
         <div className="dashboard">
             <div className="top-grid">
-                <div className="stat-grid">
                     <StatGrid />
-                </div>
                 <ChartCard />
             </div>
+            <TableCard />
+            <div className="back-btn">
+                <button>
+                    <Link to="/">← Back</Link>
+                </button>
+            </div>
         </div>
-        <TableCard />
         </>
     );
 }

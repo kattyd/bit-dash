@@ -7,7 +7,6 @@
     top: 0;
     z-index: 1000;
     height: 52px;
-    font-family: 'DM Sans', sans-serif;
     font-weight: 600;
     max-width: 100%;
     margin: 0 auto;
@@ -20,13 +19,14 @@
     display: flex;
     align-items: center;
     border-radius: 20px;
+    
 }
 
 .logo a {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 34px;
     font-weight: 400;
-    color: var(--light);
+    color: #000;
     text-decoration: none;
     align-self: left;
 }
@@ -42,7 +42,10 @@
     justify-content: center; /* CHANGED: Works better with dynamic width than space-evenly */
     border-radius: 0 0 24px 24px; 
 }
-
+.links p {
+    font-size: 14px;
+    color: #3d3d3d;
+}
 /* Left outward curve */
 .links::before {
     content: "";

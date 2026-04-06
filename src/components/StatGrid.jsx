@@ -2,6 +2,9 @@ import React, { useEffect } from "react";
 import { useBitcoinStore } from "../store/store";
 import './StatGrid.css';
 import bitcoin from "../assets/bitcoin.png";
+import exchange from "../assets/exchange.png";
+import graph from "../assets/graph.png";
+import pickaxe from "../assets/pickaxe.png";
 import { title } from "framer-motion/client";
 
 function StatGrid() {
@@ -19,21 +22,21 @@ function StatGrid() {
             id: "fees",
             title: "Fees",
             value: fees ? `${fees.halfHourFee} sat/vB` : "Loading...",
-            icon: bitcoin,
+            icon: exchange,
             subText: "BTC rate has increased"
         },
         {
             id: "mcap",
             title: "Market Cap",
             value: marketCap ? marketCap.toLocaleString(undefined, { maximumFractionDigits: 0 }) : "Loading...",
-            icon: bitcoin,
+            icon: graph,
             subText: "BTC rate has increased"
         },
         {
             id: "blocks",
             title: "Last Finalized Block",
             value: lastBlock ? lastBlock.toLocaleString() : "Loading...",
-            icon: bitcoin,
+            icon: pickaxe,
             subText: "BTC rate has increased"
         }
         
