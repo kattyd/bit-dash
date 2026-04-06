@@ -7,7 +7,6 @@ import money from "../assets/money.png";
 import exchange from "../assets/swap.png";
 import graph from "../assets/api.png";
 import pickaxe from "../assets/mint.png";
-import { title } from "framer-motion/client";
 
 function StatGrid() {
     const { btcPrice, fees, marketCap, lastBlock, isLoading, fetchDashboardData } = useBitcoinStore();
